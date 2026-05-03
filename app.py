@@ -13,14 +13,13 @@ import platform
 st.title('Generación Aumentada por Recuperación (RAG) 💬')
 st.write("Versión de Python:", platform.python_version())
 
-st.markdown("![Alt Text](https://media.tenor.com/SZmPxoDpklcAAAAM/tesla-optimus.gif)")
+
 
 # Load and display image
 try:
-    image = Image.open('Chat_pdf.png')
-    st.image(image, width=350)
+    st.markdown("![Alt Text](https://media.tenor.com/SZmPxoDpklcAAAAM/tesla-optimus.gif)")
 except Exception as e:
-    st.warning(f"No se pudo cargar la imagen: {e}")
+    st.warning(f"No se pudo cargar el gif: {e}")
 
 # Sidebar information
 with st.sidebar:
