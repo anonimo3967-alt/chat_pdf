@@ -22,11 +22,11 @@ except Exception as e:
     st.warning(f"No se pudo cargar el gif: {e}")
 
 # Get API key from user
-ke = st.text_input('Ingresa tu Clave de OpenAI, a menos que el profe la haya desactivado :T', type="password")
+ke = st.text_input('Ingresa tu Clave de OpenAI, a menos que el profe la haya desactivado 😒', type="password")
 if ke:
     os.environ['OPENAI_API_KEY'] = ke
 else:
-    st.warning("Por alguna razón no te quiere cargar la API key...")
+    st.warning("No dejes la API key vacia...")
 
 # PDF uploader
 pdf = st.file_uploader("Hoooora de cargar tu pdffff", type="pdf")
@@ -57,7 +57,7 @@ if pdf is not None and ke:
         knowledge_base = FAISS.from_texts(chunks, embeddings)
         
         # User question interface
-        st.subheader("Escribe qué quieres saber sobre el documento")
+        st.subheader("¿que quieres saber, oh forastero, sobre lo que me acabaste de entregar?")
         user_question = st.text_area(" ", placeholder="Escribe tu pregunta aquí...")
         
         # Process question when submitted
@@ -75,7 +75,7 @@ if pdf is not None and ke:
             response = chain.run(input_documents=docs, question=user_question)
             
             # Display the response
-            st.markdown("### Respuesta:")
+            st.markdown("### aquí tienes tu respuesta, paciente forastero:")
             st.markdown(response)
                 
     except Exception as e:
