@@ -13,6 +13,8 @@ import platform
 st.title('Generación Aumentada por Recuperación (RAG) 💬')
 st.write("Versión de Python:", platform.python_version())
 
+st.markdown("![Alt Text](https://media.tenor.com/SZmPxoDpklcAAAAM/tesla-optimus.gif)")
+
 # Load and display image
 try:
     image = Image.open('Chat_pdf.png')
