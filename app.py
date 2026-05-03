@@ -21,19 +21,15 @@ try:
 except Exception as e:
     st.warning(f"No se pudo cargar el gif: {e}")
 
-# Sidebar information
-with st.sidebar:
-    st.subheader("Este Agente te ayudará a realizar análisis sobre el PDF cargado")
-
 # Get API key from user
-ke = st.text_input('Ingresa tu Clave de OpenAI', type="password")
+ke = st.text_input('Ingresa tu Clave de OpenAI, a menos que el profe la haya desactivado :T', type="password")
 if ke:
     os.environ['OPENAI_API_KEY'] = ke
 else:
-    st.warning("Por favor ingresa tu clave de API de OpenAI para continuar")
+    st.warning("Por alguna razón no te quiere cargar la API key...")
 
 # PDF uploader
-pdf = st.file_uploader("Carga el archivo PDF", type="pdf")
+pdf = st.file_uploader("Hoooora de cargar tu pdffff", type="pdf")
 
 # Process the PDF if uploaded
 if pdf is not None and ke:
@@ -54,7 +50,7 @@ if pdf is not None and ke:
             length_function=len
         )
         chunks = text_splitter.split_text(text)
-        st.success(f"Documento dividido en {len(chunks)} fragmentos")
+        st.success(f"el documento fue cortado en {len(chunks)} deliciosos pedazos de carne")
         
         # Create embeddings and knowledge base
         embeddings = OpenAIEmbeddings()
