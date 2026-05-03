@@ -10,8 +10,8 @@ from langchain.chains.question_answering import load_qa_chain
 import platform
 
 # App title and presentation
-st.title('Generación Aumentada por Recuperación (RAG) 💬')
-st.write("Versión de Python:", platform.python_version())
+st.title('Generación Aumentada por Recuperación (RAGTime) 💬')
+st.write("Ragtime (ragged-time es un género musical estadounidense que se popularizó a finales del siglo XIX, caracterizado por una melodía sincopada y un ritmo acentuado en los tiempos impares.")
 
 
 
